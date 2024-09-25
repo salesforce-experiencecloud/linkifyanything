@@ -1,0 +1,83 @@
+<template>
+    
+    <div class="slds-m-bottom_medium slds-m-bottom_x-large slds-align_absolute-center">
+        <a href="https://linkifyanythingforexpcloud.substack.com/p/documentation" 
+            target="_blank"
+            class="slds-button slds-button_outline-brand docLink"
+            >
+            Documentation
+            <lightning-icon class="slds-m-left_small docIcon" icon-name="utility:new_window" size="xx-small" alternative-text="Open Documentation in New Window" title="Open Documentation in New Window"></lightning-icon>
+            
+        </a>
+    </div>
+
+    <lightning-accordion allow-multiple-sections-open active-section-name="builder">
+        <lightning-accordion-section name="builder" label="Builder Controls">
+            <lightning-input 
+                type={propInputs.hideComponentName.type} 
+                label={propInputs.hideComponentName.label} 
+                class={propInputs.hideComponentName.classes} 
+                checked={propInputs.hideComponentName.value}
+                onchange={propInputs.hideComponentName.changeHandler} 
+                data-key={propInputs.hideComponentName.key}
+                field-level-help={propInputs.hideComponentName.help} 
+                required={propInputs.hideComponentName.required}
+                >
+            </lightning-input>
+        </lightning-accordion-section>
+    </lightning-accordion>
+
+    <lightning-accordion allow-multiple-sections-open active-section-name="config">
+        <lightning-accordion-section name="config" label="Configuration">
+            <lightning-input 
+                type={propInputs.linkHref.type} 
+                label={propInputs.linkHref.label} 
+                class={propInputs.linkHref.classes} 
+                value={propInputs.linkHref.value}
+                onchange={propInputs.linkHref.changeHandler} 
+                data-key={propInputs.linkHref.key}
+                field-level-help={propInputs.linkHref.help} 
+                required={propInputs.linkHref.required}
+                >
+            </lightning-input>
+
+            <lightning-input 
+                type={propInputs.linkPrependBasePath.type} 
+                label={propInputs.linkPrependBasePath.label} 
+                class={propInputs.linkPrependBasePath.classes} 
+                value={propInputs.linkPrependBasePath.value}
+                onchange={propInputs.linkPrependBasePath.changeHandler} 
+                data-key={propInputs.linkPrependBasePath.key}
+                field-level-help={propInputs.linkPrependBasePath.help} 
+                required={propInputs.linkPrependBasePath.required}
+                >
+            </lightning-input>
+
+            <lightning-input 
+                type={propInputs.linkTitle.type} 
+                label={propInputs.linkTitle.label} 
+                class={propInputs.linkTitle.classes} 
+                value={propInputs.linkTitle.value}
+                onchange={propInputs.linkTitle.changeHandler} 
+                data-key={propInputs.linkTitle.key}
+                field-level-help={propInputs.linkTitle.help} 
+                required={propInputs.linkTitle.required}
+                >
+            </lightning-input>
+
+            <div class={propInputs.linkTarget.classes}>
+                <lightning-select
+                    name={propInputs.linkTarget.key}
+                    label={propInputs.linkTarget.label} 
+                    value={propInputs.linkTarget.value}
+                    options={propInputs.linkTarget.options}
+                    onchange={propInputs.linkTarget.changeHandler}
+                    required={propInputs.linkTarget.required}
+                    data-key={propInputs.linkTarget.key}
+                    field-level-help={propInputs.linkTarget.help} 
+                    ></lightning-select>
+            </div>
+        </lightning-accordion-section>
+    </lightning-accordion>
+
+</template>

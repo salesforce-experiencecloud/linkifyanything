@@ -1,0 +1,15 @@
+<template>
+    <template lwc:if={showComponentName}>
+        <div class="slds-notify slds-notify_alert slds-alert_offline slds-text-body_small slds-text-color_inverse" role="alert">
+            Linkify Anything
+        </div>
+    </template>
+    <a href={linkHref} 
+        onclick={handleClick}
+        aria-label={linkTitle} 
+        title={linkTitle}
+        role="linkifyAnything">
+            <slot name="linkRegion"></slot> 
+    </a>
+
+</template>
