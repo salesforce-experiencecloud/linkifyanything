@@ -31,6 +31,8 @@ export default class LinkifyAnything extends LightningElement {
             tmpvalue = sitePath + tmpvalue;
         }
 
+        tmpvalue = tmpvalue.replaceAll('//','/');
+
         return tmpvalue;
     }
 

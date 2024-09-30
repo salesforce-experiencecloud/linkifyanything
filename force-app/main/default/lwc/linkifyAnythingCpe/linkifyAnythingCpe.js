@@ -76,7 +76,7 @@ export default class LinkifyAnythingCpe extends LightningElement {
         },
         linkPrependBasePath: {
             key: 'linkPrependBasePath', //key used for html lightning-input tag identifier, must match key in propInputs
-            label: 'Prepend Base Path to link url', //label used for html lighting-input tag
+            label: 'Prepend Site Base Path to link url', //label used for html lighting-input tag
             type: 'checkbox', //type used for html lightning-input tag
             help: 'Prepend the site\'s base path to the provided url', //tooltip / help text used for html lightning-input tag
             required: false, //required used for html lightning-input tag
