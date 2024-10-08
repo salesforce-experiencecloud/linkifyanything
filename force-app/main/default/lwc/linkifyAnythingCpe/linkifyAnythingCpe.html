@@ -77,6 +77,18 @@
                     field-level-help={propInputs.linkTarget.help} 
                     ></lightning-select>
             </div>
+
+            <lightning-input 
+                type={propInputs.linkNoTextDecoration.type} 
+                label={propInputs.linkNoTextDecoration.label} 
+                class={propInputs.linkNoTextDecoration.classes} 
+                checked={propInputs.linkNoTextDecoration.value}
+                onchange={propInputs.linkNoTextDecoration.changeHandler} 
+                data-key={propInputs.linkNoTextDecoration.key}
+                field-level-help={propInputs.linkNoTextDecoration.help} 
+                required={propInputs.linkNoTextDecoration.required}
+                >
+            </lightning-input>
         </lightning-accordion-section>
     </lightning-accordion>
 

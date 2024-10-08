@@ -42,6 +42,21 @@ export default class LinkifyAnything extends LightningElement {
         return tmpvalue;
     }
 
+    get linkNoTextDecoration() {
+        let tmpvalue = (generalUtils.isStringEmpty(this.configObj?.linkNoTextDecoration) )
+        ? false : this.configObj?.linkNoTextDecoration;
+        return tmpvalue;
+    }
+
+    get linkClasses() {
+        let tmpvalue = [];
+        if(this.linkNoTextDecoration === true)
+        {
+            tmpvalue.push('noTextDecoration');
+        }
+        return tmpvalue.join(' ');
+    }
+
     get linkTarget() {
         let tmpvalue = (generalUtils.isStringEmpty(this.configObj?.linkTarget) || this.configObj?.linkTarget.trim() === 'undefined') 
         ? '' : this.configObj?.linkTarget;

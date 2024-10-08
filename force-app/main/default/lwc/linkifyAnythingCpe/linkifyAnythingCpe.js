@@ -98,6 +98,18 @@ export default class LinkifyAnythingCpe extends LightningElement {
             classes: defaultCSSClasses + ' slds-p-horizontal_medium display_inline-block ', //css classes for html lightning-input tag
             changeHandler: this.handleHideComponentNameChange, //onchange handler for html lightning-input tag
         },
+        linkNoTextDecoration: {
+            key: 'linkNoTextDecoration', //key used for html lightning-input tag identifier, must match key in propInputs
+            label: 'No Text Decoration', //label used for html lighting-input tag
+            type: 'checkbox', //type used for html lightning-input tag
+            help: 'If checked, overrides link text decoration with none.', //tooltip / help text used for html lightning-input tag
+            required: false, //required used for html lightning-input tag
+            valuePath: 'linkNoTextDecoration', //property path within the value object
+            value: false, //default value
+            doSetDefaultValue: true, //set to true to set this lightning-input's default value to what is stored in the value object
+            classes: defaultCSSClasses + ' slds-p-horizontal_medium display_inline-block ', //css classes for html lightning-input tag
+            changeHandler: this.handleLinkNoTextDecorationChange, //onchange handler for html lightning-input tag
+        },
     };
 
     @api
@@ -266,6 +278,16 @@ export default class LinkifyAnythingCpe extends LightningElement {
 
         let tmpvalueObj = this.getValueObj();
         tmpvalueObj.hideComponentName = this.propInputs.hideComponentName.value;
+
+        this.dispatchEvent(new CustomEvent("valuechange", 
+            {detail: {value: JSON.stringify(tmpvalueObj)}}));
+    }
+
+    handleLinkNoTextDecorationChange(e) {
+        this.propInputs.linkNoTextDecoration.value = e.detail.checked;
+
+        let tmpvalueObj = this.getValueObj();
+        tmpvalueObj.linkNoTextDecoration = this.propInputs.linkNoTextDecoration.value;
 
         this.dispatchEvent(new CustomEvent("valuechange", 
             {detail: {value: JSON.stringify(tmpvalueObj)}}));
